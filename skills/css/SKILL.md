@@ -1,9 +1,9 @@
 ---
-name: authoring-discourse-css
+name: css
 description: Use when writing CSS for Discourse core, themes, or plugins - handles BEM class naming, modifiers with double dashes, block__element structure, and is-/has- state prefixes
 ---
 
-# Authoring Discourse CSS
+# CSS
 
 ## Overview
 
