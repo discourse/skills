@@ -1,0 +1,20 @@
+{
+  "name": "discourse-agent-skills",
+  "owner": {
+    "name": "Joffrey Jaffeux",
+    "email": "joffrey.jaffeux@discourse.org"
+  },
+  "metadata": {
+    "description": "Discourse skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "frontend-skills",
+      "description": "Collection of frontend skills suitable for frontend work.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/css"]
+    }
+  ]
+}
