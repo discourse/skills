@@ -139,7 +139,7 @@ setupOther() {
 // ✅ ALWAYS - Explicit lifecycle method
 init() {
   this._super(...arguments);
-  this.set("data", []);
+  this.data = [];
   this.loadData();
 }
 ```
@@ -190,7 +190,7 @@ export default EmberObject.extend({
   config: {}      // SHARED REFERENCE
 });
 
-// ✅ ALWAYS - Initialize in init()
+// ✅ ALWAYS - Initialize in init() (EmberObject)
 export default EmberObject.extend({
   items: null,
   config: null,
