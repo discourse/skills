@@ -14,7 +14,7 @@
       "description": "Collection of frontend skills suitable for frontend work.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/css"]
+      "skills": ["./skills/css", "./skills/javascript"]
     }
   ]
 }
