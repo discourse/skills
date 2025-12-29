@@ -67,6 +67,24 @@ console.log(site.top_menu_items);
 
 **The site model is automatically injected** into components, routes, and controllers. Just use `this.site`.
 
+**For services, use @service decorator:**
+
+```javascript
+import { service } from "@ember/service";
+
+export default class extends Component {
+  @service router;
+  @service currentUser;
+  @service store;
+
+  navigateToProfile() {
+    this.router.transitionTo("user", this.currentUser.username);
+  }
+}
+```
+
+**Common services:** `router`, `store`, `currentUser`, `site`, `siteSettings`, `session`, `dialog`, `modal`.
+
 ## Never Use self = this
 
 **Rule:** Use arrow functions, not `self = this`.
