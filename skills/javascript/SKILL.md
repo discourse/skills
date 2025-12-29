@@ -237,9 +237,9 @@ For arrays that need reactivity, use `TrackedArray` instead of native array.
 
 ## Avoid Observers
 
-**Rule:** Use computed properties or action handlers instead of observers.
+**Rule:** Use action handlers for user events. Use native getters for derived data.
 
-**Why:** Observers are error-prone and hard to debug. From Ember docs: "Observers are often over-used by new Ember developers."
+**Why:** From Ember docs: "Observers are often over-used by new Ember developers. Most of the time, you will be observing an action the user took, such as clicking a button. Instead of an observer, consider putting that code in the action handler itself."
 
 ```javascript
 // ❌ NEVER - Observer
@@ -248,17 +248,20 @@ inputChanged() {
   this.processInput();
 }
 
-// ✅ BETTER - Computed property
-@computed('userInput')
-get processedInput() {
-  return this.processInput();
-}
-
-// ✅ OR - Action handler on user event
+// ✅ ALWAYS - Action handler for user events
 <input {{on "input" this.processInput}} />
 ```
 
-Most observer use cases are better solved with computed properties or event handlers.
+**When you need derived data** (not side effects), use native getters:
+
+```javascript
+// ✅ Native getter for computed values
+get fullName() {
+  return `${this.firstName} ${this.lastName}`;
+}
+```
+
+**Don't use getters for side effects** - use action handlers instead.
 
 ## Common Mistakes
 
